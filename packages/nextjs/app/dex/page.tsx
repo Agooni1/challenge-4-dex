@@ -151,7 +151,7 @@ const Dex: NextPage = () => {
                     try {
                       await writeDexContractAsync({
                         functionName: "tokenToEth",
-                        // @ts-expect-error - Show error on frontend while sending, if user types invalid number
+                        //  Show error on frontend while sending, if user types invalid number
                         args: [NUMBER_REGEX.test(tokenToETHAmount) ? parseEther(tokenToETHAmount) : tokenToETHAmount],
                       });
                     } catch (err) {
@@ -198,7 +198,7 @@ const Dex: NextPage = () => {
                     try {
                       await writeDexContractAsync({
                         functionName: "withdraw",
-                        // @ts-expect-error - Show error on frontend while sending, if user types invalid number
+                        // - Show error on frontend while sending, if user types invalid number
                         args: [NUMBER_REGEX.test(withdrawAmount) ? parseEther(withdrawAmount) : withdrawAmount],
                       });
                     } catch (err) {
@@ -246,7 +246,7 @@ const Dex: NextPage = () => {
                         functionName: "approve",
                         args: [
                           approveSpender as AddressType,
-                          // @ts-expect-error - Show error on frontend while sending, if user types invalid number
+                          //- Show error on frontend while sending, if user types invalid number
                           NUMBER_REGEX.test(approveAmount) ? parseEther(approveAmount) : approveAmount,
                         ],
                       });
